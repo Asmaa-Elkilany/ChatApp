@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'features/auth/change password/view/components/change_password.dart';
-import 'features/auth/forget password/view/components/forget_password_page.dart';
-import 'features/auth/login/view/components/login_page.dart';
-import 'features/auth/registeration/view/components/registeration_page.dart';
-import 'features/auth/verivication/view/components/verification_page.dart';
-import 'features/auth/welcome/view/components/welcome_page.dart';
-import 'features/auth/onboarding/view/components/onboarding_view.dart';
+import 'features/auth/change password/view/page/change_password_page.dart';
+import 'features/auth/forget password/view/page/forget_password_page.dart';
+import 'features/auth/login/view/page/login_page.dart';
+import 'features/auth/registeration/view/page/registeration_page.dart';
+import 'features/auth/verification/view/page/verification_page.dart';
+import 'features/auth/welcome/view/page/welcome_page.dart';
+import 'features/auth/onboarding/view/components/onboarding_widget.dart';
 
 void main() async{
 
@@ -30,11 +30,11 @@ class MyApp extends StatelessWidget {
         routes:{
           "/onboarding": (context) => const OnboardingView(),
           "/": (context) => const WelcomePage(),
-          "/login": (context) =>  LoginPage(),
+          "/login": (context) =>  const LoginPage(),
           "/signup": (context) => const RegisterationPage(),
           "/forget": (context) => const ForgetPasswordPage(),
-          "/change": (context) => ChangePasswordPage(),
-          "/verification": (context) => const VerificationPage(),
+          "/change": (context) =>  const ChangePasswordPage(),
+          "/verification": (context) =>  const VerificationPage(),
         },
       initialRoute: onboarding ? "/onboarding" : "/",
       );

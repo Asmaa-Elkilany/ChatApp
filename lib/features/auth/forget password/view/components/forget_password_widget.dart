@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/validation.dart';
 
-class ForgetPasswordPage extends StatelessWidget{
-  const ForgetPasswordPage({super.key});
+class ForgetPasswordWidget extends StatelessWidget{
+  const ForgetPasswordWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SizedBox(
+   return SizedBox(
           height: double.infinity,
           width: double.infinity,
           child: Stack(
@@ -105,9 +103,7 @@ class ForgetPasswordPage extends StatelessWidget{
               ),
             ],
           ),
-        ),
-      ),
-    );
+        );
   }
 
 }

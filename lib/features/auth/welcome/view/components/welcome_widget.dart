@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+class WelcomeWidget extends StatelessWidget {
+  const WelcomeWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SizedBox(
+        return SizedBox(
           child: Stack(
             children: [
               SizedBox(
@@ -106,8 +104,7 @@ class WelcomePage extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
+        );
+
   }
 }

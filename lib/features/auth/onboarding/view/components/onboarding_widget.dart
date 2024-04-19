@@ -1,8 +1,8 @@
-import 'package:auth/features/auth/welcome/view/components/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../../core/utils/color.dart';
+import '../../../welcome/view/page/welcome_page.dart';
 import 'onboarding_items.dart';
 
 class OnboardingView extends StatefulWidget {
@@ -80,12 +80,6 @@ class _OnboardingViewState extends State<OnboardingView> {
       ),
     );
   }
-
-  //Now the problem is when press get started button
-  // after re run the app we see again the onboarding screen
-  // so lets do one time onboarding
-
-  //Get started button
 
   Widget getStarted(){
     return Container(

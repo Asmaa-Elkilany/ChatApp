@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '/../../../core/utils/validation.dart';
 
-class ChangePasswordPage extends StatelessWidget {
+class ChangePasswordWidget extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
   TextEditingController();
 
-  ChangePasswordPage({super.key});
+  ChangePasswordWidget({super.key});
 
   String? _validatePassword(String? value) {
     if (value != _passwordController.text) {
@@ -18,9 +18,7 @@ class ChangePasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SizedBox(
+    return SizedBox(
           height: double.infinity,
           width: double.infinity,
           child: Stack(
@@ -133,9 +131,7 @@ class ChangePasswordPage extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
+        );
   }
 
   static  InputDecoration inputDecoration = InputDecoration(

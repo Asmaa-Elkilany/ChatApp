@@ -2,13 +2,11 @@ import 'package:auth/core/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class LoginPage extends StatelessWidget{
-   LoginPage({super.key});
+class LoginWidget extends StatelessWidget{
+  LoginWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SizedBox(
+    return SizedBox(
           height: double.infinity,
           width: double.infinity,
           child: Stack(
@@ -147,9 +145,7 @@ class LoginPage extends StatelessWidget{
               ),
             ],
           ),
-        ),
-      ),
-    );
+        );
   }
   InputDecoration decoration =  InputDecoration(
 
