@@ -1,3 +1,4 @@
+import 'package:auth/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/validation.dart';
@@ -22,11 +23,19 @@ class ForgetPasswordWidget extends StatelessWidget{
                         fontFamily: "myFont",
                       ),
                     ),
+
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Image.asset("images/assets/images/Forgot password-cuate.png",
+                      width: context.width,
+                      height:context.height/2.2
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
                     Container(
-                      width: 430,
+                      width: (10*context.width)/12,
                       decoration: BoxDecoration(
                         color: const Color(0xffE2D3F5),
                         borderRadius: BorderRadius.circular(30),
@@ -93,6 +102,7 @@ class ForgetPasswordWidget extends StatelessWidget{
                           color: Colors.white,
                         ),
                       ),
+
                     ),
                     const SizedBox(
                       height: 20,

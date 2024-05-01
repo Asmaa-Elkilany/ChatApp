@@ -2,7 +2,7 @@
     <application
         android:label="auth"
         android:name="${applicationName}"
-        android:icon="@drawable/splash">
+        android:icon="@mipmap/ic_launcher">
         >
         <activity
             android:name=".MainActivity"

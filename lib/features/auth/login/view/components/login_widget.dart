@@ -1,3 +1,4 @@
+import 'package:auth/core/utils/context_extension.dart';
 import 'package:auth/core/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,14 +7,12 @@ class LoginWidget extends StatelessWidget{
   LoginWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-          height: double.infinity,
-          width: double.infinity,
+    return SingleChildScrollView(
           child: Stack(
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: ListView(
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
                   children: [
                     const SizedBox(height: 35,),
                     const Text('Login',
@@ -23,12 +22,14 @@ class LoginWidget extends StatelessWidget{
                       ),
                     ),
                     const SizedBox(height: 20,),
-                    SvgPicture.asset("images/assets/icons/login.svg"),
+                   Image.asset("images/assets/images/mob_login.png",
+                   width: context.width,
+                   ),
                     const SizedBox(
                       height: 20,
                     ),
                     Container(
-                      width: 430,
+                      width: context.width,
                       decoration: BoxDecoration(
                         color: const Color(0xffE2D3F5), // Set the background color here
                         borderRadius: BorderRadius.circular(30), // Optional: You can adjust the border radius
@@ -81,7 +82,7 @@ class LoginWidget extends StatelessWidget{
 
                     ElevatedButton(
                       onPressed: (){
-                        //Navigator.pushNamed(context, "");
+                        Navigator.pushNamed(context, "/dashboard");
                       },
                       style: ButtonStyle(
                         backgroundColor:MaterialStateProperty.all(const Color(0xff6F35A5),) ,
@@ -161,7 +162,7 @@ class LoginWidget extends StatelessWidget{
               color: Colors.purple,
               width: 2
           ),
-          borderRadius: BorderRadius.circular(5)
+          borderRadius: BorderRadius.circular(30)
       ),
       errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(

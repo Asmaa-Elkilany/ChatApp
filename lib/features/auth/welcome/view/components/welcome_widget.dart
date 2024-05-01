@@ -1,5 +1,5 @@
+import 'package:auth/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({super.key});
@@ -13,8 +13,9 @@ class WelcomeWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(
-                      height: 35,
+                      height: 30,
                     ),
+
                     const Text(
                       'Welcome',
                       style: TextStyle(
@@ -23,9 +24,13 @@ class WelcomeWidget extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 80,
+                      height:20,
                     ),
-                    SvgPicture.asset("images/assets/icons/chat.svg"),
+                    Image.asset("images/assets/images/welcome.png",
+                      width: context.width,
+                      height:context.height/2,
+                    ),
+
                     const SizedBox(
                       height: 20,
                     ),
@@ -37,7 +42,7 @@ class WelcomeWidget extends StatelessWidget {
                         backgroundColor: MaterialStateProperty.all(
                           const Color(0xff6F35A5),
                         ),
-                        padding: MaterialStateProperty.all(
+                          padding: MaterialStateProperty.all(
                           const EdgeInsets.symmetric(
                               horizontal: 80, vertical: 10),
                         ),
@@ -86,6 +91,9 @@ class WelcomeWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 20,
+                    )
                   ],
                 ),
               ),
@@ -97,11 +105,7 @@ class WelcomeWidget extends StatelessWidget {
                   height: 150,
                 ),
               ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                child: Image.asset("images/assets/images/main_bottom.png"),
-              ),
+
             ],
           ),
         );

@@ -22,7 +22,7 @@ class RegisterationWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 35,),
             const Text(
@@ -33,8 +33,8 @@ class RegisterationWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20,),
-            SvgPicture.asset(
-              "images/assets/icons/signup.svg",
+           Image.asset(
+              "images/assets/images/Sign up-cuate.png",
               width: 250,
               height: 250,
             ),

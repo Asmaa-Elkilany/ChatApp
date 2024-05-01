@@ -1,3 +1,9 @@
+import 'package:auth/features/auth/change%20password/view/page/change_password_page.dart';
+import 'package:auth/features/auth/forget%20password/view/page/forget_password_page.dart';
+import 'package:auth/features/auth/login/view/page/login_page.dart';
+import 'package:auth/features/auth/onboarding/controller/onboarding_controller_cubit.dart';
+import 'package:auth/features/auth/registeration/view/page/registeration_page.dart';
+import 'package:auth/features/auth/verification/view/page/verification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -95,7 +101,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             pres.setBool("onboarding", true);
 
             if(!mounted)return;
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const WelcomePage()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const VerificationPage()));
           },
           child: const Text("Get started",style: TextStyle(color: Colors.white),)),
     );
