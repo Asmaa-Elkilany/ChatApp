@@ -1,3 +1,4 @@
+import 'package:auth/features/dashboard/modules/users/view/pages/user_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../controller/dashboard_controller.dart';
@@ -18,9 +19,9 @@ class MyDesign extends StatelessWidget{
             controller: controller.pageController,
             onPageChanged: controller.onChangeTapIndex,
             children: const [
-              Text("home"),
-              Text("Services"),
-              Text("Users"),
+               UserPage(),
+               Text("Services"),
+               Text('Calls'),
             ],
 
           );

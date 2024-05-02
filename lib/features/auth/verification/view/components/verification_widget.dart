@@ -92,12 +92,29 @@ class VerificationWidget extends StatelessWidget {
               },*/
               ),
               const SizedBox(height: 20),
-              IconButton(onPressed: controller.onTapConfirm,
-                icon: const Icon(Icons.done,
-                  color: Colors.purple,
-                size: 50,
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, "/dashboard");
+                },
+                style: ButtonStyle(
+                  backgroundColor:MaterialStateProperty.all(const Color(0xff6F35A5),) ,
+                  padding: MaterialStateProperty.all(
+                    const EdgeInsets.symmetric(horizontal: 79,vertical: 10),
+                  ),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(27),
+                  ),
+                  ),
                 ),
-            ),
+                child: const Text(
+                  "Confirm",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontFamily: "myFont",
+                    color: Colors.white,
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 20,
               ),

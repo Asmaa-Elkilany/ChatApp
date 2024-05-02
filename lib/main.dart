@@ -1,3 +1,4 @@
+import 'package:auth/pages/chat_page/view/page/chat_poage.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

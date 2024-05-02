@@ -1,35 +1,55 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../controller/dashboard_controller.dart';
-import '../../controller/dashboard_state.dart';
-import '../components/bottom.dart';
-import '../components/my_design.dart';
 
-class DashboardPage extends StatelessWidget{
+import '../../cubit/dashboard_cubit.dart';
+import '../../modules/chats/view/page/chats_page.dart';
+
+class DashboardPage extends StatelessWidget {
+  final List<String> titles = const ['Chats', 'Favourites', 'Settings'];
   const DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider.value(
-      value: DashBoardController(),
-      child: BlocBuilder<DashBoardController,DashBoardState>(
-        builder: (context,state){
-          final DashBoardController controller= context.read<DashBoardController>();
+    return BlocProvider(
+      create: (context) => DashboardCubit(),
+      child: BlocBuilder<DashboardCubit, DashboardState>(
+        builder: (context, state) {
+          DashboardCubit cubit = context.read<DashboardCubit>();
           return Scaffold(
-            backgroundColor: Colors.green,
             appBar: AppBar(
-              backgroundColor: Colors.yellow,
-              title: const Text("My Design"),
+              backgroundColor: Colors.purple.shade400,
+              title: Text(
+              titles [cubit.currentIndex],
+          ),
             ),
-            body:  MyDesign(controller: controller,),
-            bottomNavigationBar: MyBottom(controller: controller,),
+            body: PageView(
+              controller: cubit.pageController,
+              onPageChanged: cubit.onChangeTab,
+              children: const [
+                ChatsPage(),
+                Text('Favourites'),
+                Text('Settings'),
+              ],
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              selectedItemColor: Colors.purple.shade200,
+              currentIndex: cubit.currentIndex,
+              onTap: cubit.onChangeTab,
+              items: const [
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.person), label: 'Chats'),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.heart), label: 'Favourites'),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.settings), label: 'Settings')
+              ],
+            ),
+
           );
         },
       ),
     );
-    /*
-    */
   }
-
 }
