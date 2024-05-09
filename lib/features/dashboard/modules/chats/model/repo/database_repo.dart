@@ -1,7 +1,7 @@
-import 'dart:convert';
 import 'dart:typed_data';
-import 'package:path/path.dart';
+
 import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
 
 import '../entity_model/users_model.dart';
 class DatabaseRepo {
@@ -27,9 +27,7 @@ class DatabaseRepo {
             sender_id INTEGER,
             receiver_id INTEGER,
             message TEXT NOT NULL,
-            timestamp INTEGER,
-            FOREIGN KEY (sender_id) REFERENCES users(id),
-            FOREIGN KEY (receiver_id) REFERENCES users(id)
+            timestamp TEXT
           )
         ''');
       },
@@ -65,7 +63,7 @@ class DatabaseRepo {
   Future<void> insertMessage(Message message) async {
     await _database.insert('messages', message.toMap());
   }
-/**/
+/// /
   Future<List<Message>> getMessages() async {
     final List<Map<String, dynamic>> messageMaps = await _database.query(
         'messages');

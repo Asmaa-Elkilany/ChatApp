@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,14 +11,14 @@ class ChatsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ChatsCubit(),
+    return BlocProvider.value(
+      value: ChatsCubit.instance,
       child: BlocBuilder<ChatsCubit, ChatsState>(
         builder: (context, state) {
           final ChatsCubit controller = context.read<ChatsCubit>();
           return Scaffold(
             body: state is ChatsStateLoading? const CircularProgressIndicator():
-                state is ChatsStateEmpty ?  const Icon(CupertinoIcons.delete):
+                state is ChatsStateEmpty ?  const Center(child: Icon(CupertinoIcons.delete, size: 100,)):
             ListView.builder(
               itemBuilder:(_, int index) => UserItemWidget(
                   usersModel:controller.users[index],

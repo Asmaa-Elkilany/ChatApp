@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../cubit/dashboard_cubit.dart';
 import '../../modules/chats/view/page/chats_page.dart';
+import '../../modules/favorite/view/page/favorite_page.dart';
 
 class DashboardPage extends StatelessWidget {
   final List<String> titles = const ['Chats', 'Favourites', 'Settings'];
@@ -19,6 +20,13 @@ class DashboardPage extends StatelessWidget {
           DashboardCubit cubit = context.read<DashboardCubit>();
           return Scaffold(
             appBar: AppBar(
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'new_Chat');
+                    },
+                    icon: const Icon(CupertinoIcons.person_badge_plus, color: Colors.white))
+              ],
               backgroundColor: Colors.purple.shade400,
               title: Text(
               titles [cubit.currentIndex],
@@ -29,7 +37,7 @@ class DashboardPage extends StatelessWidget {
               onPageChanged: cubit.onChangeTab,
               children: const [
                 ChatsPage(),
-                Text('Favourites'),
+                FavoritePage(),
                 Text('Settings'),
               ],
             ),

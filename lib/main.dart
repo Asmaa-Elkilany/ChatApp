@@ -19,7 +19,7 @@ void main() async {
     builder: DevicePreview.appBuilder,
     useInheritedMediaQuery: true,
     debugShowCheckedModeBanner: false,
-    home: OnboardingView(),
+    home: DashboardPage(),
   );
   runApp(
     DevicePreview(enabled: true, builder: (context) => materialApp),

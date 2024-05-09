@@ -1,3 +1,4 @@
+
 import 'dart:typed_data';
 
 import 'package:bloc/bloc.dart';
@@ -9,6 +10,7 @@ import '../model/repo/database_repo.dart';
 part 'chats_state.dart';
 
 class ChatsCubit extends Cubit<ChatsState> {
+  static ChatsCubit instance =ChatsCubit();
   ChatsCubit() : super(ChatsStateLoading()){
     init();
   }
@@ -17,11 +19,11 @@ class ChatsCubit extends Cubit<ChatsState> {
 Future<void> init() async {
   emit(ChatsStateLoading());
  await repo.initDB();
-
- await repo.insertUser("Asmoaa", Uint8List(10));
-  await repo.insertUser("Ayoya", Uint8List(10));
-  await repo.insertUser("Aloaa", Uint8List(10));
-
+/*
+ await repo.insertUser("Asmaa", Uint8List(10));
+  await repo.insertUser("Alaa", Uint8List(10));
+  await repo.insertUser("Aya", Uint8List(10));
+*/
   users = await repo.fetchUsers();
   if(users.isEmpty){
     emit(ChatsStateEmpty());
