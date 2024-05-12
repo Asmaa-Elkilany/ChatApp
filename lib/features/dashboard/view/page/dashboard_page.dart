@@ -2,10 +2,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 import '../../cubit/dashboard_cubit.dart';
 import '../../modules/chats/view/page/chats_page.dart';
 import '../../modules/favorite/view/page/favorite_page.dart';
+import '../../modules/settings/view/settings.dart';
+import '../../modules/settings/view/themenotifier.dart';
 
 class DashboardPage extends StatelessWidget {
   final List<String> titles = const ['Chats', 'Favourites', 'Settings'];
@@ -13,6 +16,9 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   // final themeNotifier = Provider.of<ThemeNotifier>(context);
+  //  theme: themeNotifier.getTheme,
+
     return BlocProvider(
       create: (context) => DashboardCubit(),
       child: BlocBuilder<DashboardCubit, DashboardState>(
@@ -27,7 +33,7 @@ class DashboardPage extends StatelessWidget {
                     },
                     icon: const Icon(CupertinoIcons.person_badge_plus, color: Colors.white))
               ],
-              backgroundColor: Colors.purple.shade400,
+              backgroundColor: Theme.of(context).primaryColor,
               title: Text(
               titles [cubit.currentIndex],
           ),
@@ -38,11 +44,11 @@ class DashboardPage extends StatelessWidget {
               children: const [
                 ChatsPage(),
                 FavoritePage(),
-                Text('Settings'),
+                SettingsPage(),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
-              selectedItemColor: Colors.purple.shade200,
+              selectedItemColor: Theme.of(context).primaryColor.withOpacity(.8),
               currentIndex: cubit.currentIndex,
               onTap: cubit.onChangeTab,
               items: const [

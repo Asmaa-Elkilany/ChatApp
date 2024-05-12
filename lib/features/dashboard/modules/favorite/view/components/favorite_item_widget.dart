@@ -21,8 +21,8 @@ class FavoriteItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(1.5),
       child: DecoratedBox(decoration: BoxDecoration(
-        color: Colors.purple.shade100,
-      border: Border.all(color: Colors.purple.shade200,width: 2),
+        color: Theme.of(context).primaryColor.withOpacity(.1),
+      border: Border.all(color: Theme.of(context).primaryColor.withOpacity(.2),width: 2),
         borderRadius: BorderRadius.circular(10),
       ),
           child: Padding(
@@ -81,13 +81,13 @@ class FavoriteItemWidget extends StatelessWidget {
                 ),
                  Divider(
                   thickness: 1,
-                  color: Colors.purple.shade700,
+                  color: Theme.of(context).primaryColor.withOpacity(.7),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                   InkWell(child: usersModel.favorite ==1?
-                  Icon(CupertinoIcons.heart_fill, color: Colors.purple.shade700,)
+                  Icon(CupertinoIcons.heart_fill, color: Theme.of(context).primaryColor)
                       :const Icon(CupertinoIcons.heart),
                       onTap :(){
                         if (usersModel.favorite==1){
@@ -100,7 +100,7 @@ class FavoriteItemWidget extends StatelessWidget {
                     Container(
                       height: 20,
                       width: .5,
-                      color: Colors.purple.shade700,
+                      color: Theme.of(context).primaryColor.withOpacity(.7),
                     )
 
                     ,

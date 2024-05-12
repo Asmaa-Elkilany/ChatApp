@@ -18,7 +18,7 @@ class NewChatPage extends StatelessWidget {
           final NewChatCubit cubit = context.read<NewChatCubit>();
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.purple,
+              backgroundColor: Theme.of(context).primaryColor,
               title: const Text('Add new Profile'),
 
             ),

@@ -21,8 +21,8 @@ class UserItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(1.5),
       child: DecoratedBox(decoration: BoxDecoration(
-        color: Colors.purple.shade100,
-      border: Border.all(color: Colors.purple.shade200,width: 2),
+        color:Theme.of(context).primaryColor.withOpacity(.1),
+      border: Border.all(color: Theme.of(context).primaryColor.withOpacity(.6)),
         borderRadius: BorderRadius.circular(10),
       ),
           child: Padding(
@@ -33,7 +33,6 @@ class UserItemWidget extends StatelessWidget {
                   children: [
                        Column(
                       children: [
-                        Text(usersModel.image!.length.toString()),
                   /*    CircleAvatar(
                           radius: 25,
                           backgroundImage: AssetImage("images/profile.jpg"),
@@ -80,13 +79,13 @@ class UserItemWidget extends StatelessWidget {
                 ),
                  Divider(
                   thickness: 1,
-                  color: Colors.purple.shade700,
+                  color:Theme.of(context).primaryColor.withOpacity(.7),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                   InkWell(child: usersModel.favorite ==1?
-                  Icon(CupertinoIcons.heart_fill, color: Colors.purple.shade700,)
+                  Icon(CupertinoIcons.heart_fill, color: Theme.of(context).primaryColor,)
                       :const Icon(CupertinoIcons.heart),
                       onTap :(){
                         if (usersModel.favorite==1){
@@ -99,12 +98,12 @@ class UserItemWidget extends StatelessWidget {
                     Container(
                       height: 20,
                       width: .5,
-                      color: Colors.purple.shade700,
+                      color: Theme.of(context).primaryColor.withOpacity(.7),
                     )
 
                     ,
                     InkWell(child: usersModel.favorite ==1?
-                    Icon(CupertinoIcons.delete, color: Colors.purple.shade700,)
+                    Icon(CupertinoIcons.delete, color: Theme.of(context).primaryColor.withOpacity(.7),)
                         :const Icon(CupertinoIcons.delete),
                         onTap :(){
                           if (usersModel.favorite==1){
