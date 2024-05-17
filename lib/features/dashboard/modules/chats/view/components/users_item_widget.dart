@@ -1,11 +1,9 @@
 
-import 'dart:typed_data';
-
+import 'package:dashboard/core/extentions/build_context_extension.dart';
+import 'package:dashboard/modules/chats/contoller/chats_cubit.dart';
+import 'package:dashboard/modules/chats/model/entity_model/users_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../contoller/chats_cubit.dart';
-import '../../model/entity_model/users_model.dart';
 
 class UserItemWidget extends StatelessWidget {
   const UserItemWidget({super.key,
@@ -21,9 +19,9 @@ class UserItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(1.5),
       child: DecoratedBox(decoration: BoxDecoration(
-        color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.1) ?? Colors.transparent,
+        color: context.getTheme.buttonTheme.colorScheme?.background.withOpacity(0.1) ?? Colors.transparent,
         border: Border.all(
-          color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.2) ?? Colors.transparent,
+          color: context.getTheme.buttonTheme.colorScheme?.background.withOpacity(0.2) ?? Colors.transparent,
           width: 3,
         ),
         borderRadius: BorderRadius.circular(10),
@@ -61,16 +59,21 @@ class UserItemWidget extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(usersModel.username ?? 'Name',
-                          style:Theme.of(context).textTheme.bodyLarge,
+                        InkWell(
+                          onTap: (){
+                            Navigator.pushNamed(context, 'chat_in');
+                          },
+                          child: Text(usersModel.username ?? 'Name',
+                            style:context.getTheme.textTheme.bodyLarge,
+                          ),
                         ),
                       ],
                     ),
                     // this will have the date of the last message
                     const Spacer(),
-                    const Column(
+                     Column(
                       children: [
-                       Text( "Date" ),
+                       Text( "Date", style: context.getTheme.textTheme.bodyLarge ),
                       ],
                     ),
 
@@ -95,7 +98,7 @@ class UserItemWidget extends StatelessWidget {
                     Container(
                       height: 20,
                       width: .5,
-                      color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.7) ?? Colors.transparent,
+                      color: context.getTheme.buttonTheme.colorScheme?.background.withOpacity(0.7) ?? Colors.transparent,
 
                     )
 

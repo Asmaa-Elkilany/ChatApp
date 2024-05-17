@@ -35,8 +35,7 @@ class MyTheme {
         color: Colors.purple.withOpacity(0.7),
         thickness: 1,
     ),
-
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: Colors.purple.withOpacity(.8),
         elevation: 5,
         selectedIconTheme: const IconThemeData(
@@ -53,14 +52,18 @@ class MyTheme {
        background: Colors.purple
      )
     ),
-    textTheme: const TextTheme(
+    textTheme:   const TextTheme(
       bodyLarge: TextStyle(
-        color: Colors.black,
-        fontSize: 15,
-        fontWeight:FontWeight.bold,
+          color: Colors.black,
+          fontSize: 15,
+          fontWeight:FontWeight.bold,
+        )
+    ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
+        ),
       )
-    )
-
   );
   ThemeData dark = ThemeData.dark(useMaterial3: true).copyWith(
       appBarTheme:  AppBarTheme(
@@ -116,6 +119,11 @@ class MyTheme {
             fontSize: 15,
             fontWeight:FontWeight.bold,
           )
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple.shade900),
+        ),
       )
 
   );

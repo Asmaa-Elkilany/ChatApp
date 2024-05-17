@@ -1,9 +1,9 @@
+import 'package:dashboard/modules/chats/view/components/users_item_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../contoller/chats_cubit.dart';
-import '../components/users_item_widget.dart';
 
 class ChatsPage extends StatelessWidget {
   const ChatsPage({super.key});

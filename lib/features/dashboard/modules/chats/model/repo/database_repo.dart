@@ -1,9 +1,8 @@
 import 'dart:typed_data';
 
+import 'package:dashboard/modules/chats/model/entity_model/users_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-
-import '../entity_model/users_model.dart';
 class DatabaseRepo {
   late Database _database;
 
