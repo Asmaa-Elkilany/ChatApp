@@ -21,8 +21,11 @@ class UserItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(1.5),
       child: DecoratedBox(decoration: BoxDecoration(
-        color:Theme.of(context).primaryColor.withOpacity(.1),
-      border: Border.all(color: Theme.of(context).primaryColor.withOpacity(.6)),
+        color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.1) ?? Colors.transparent,
+        border: Border.all(
+          color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.2) ?? Colors.transparent,
+          width: 3,
+        ),
         borderRadius: BorderRadius.circular(10),
       ),
           child: Padding(
@@ -59,12 +62,8 @@ class UserItemWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(usersModel.username ?? 'Name',
-                          style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                          style:Theme.of(context).textTheme.bodyLarge,
                         ),
-                        ),
-
                       ],
                     ),
                     // this will have the date of the last message
@@ -77,15 +76,13 @@ class UserItemWidget extends StatelessWidget {
 
                   ],
                 ),
-                 Divider(
-                  thickness: 1,
-                  color:Theme.of(context).primaryColor.withOpacity(.7),
+                 const Divider(
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                   InkWell(child: usersModel.favorite ==1?
-                  Icon(CupertinoIcons.heart_fill, color: Theme.of(context).primaryColor,)
+                  const Icon(CupertinoIcons.heart_fill)
                       :const Icon(CupertinoIcons.heart),
                       onTap :(){
                         if (usersModel.favorite==1){
@@ -98,12 +95,13 @@ class UserItemWidget extends StatelessWidget {
                     Container(
                       height: 20,
                       width: .5,
-                      color: Theme.of(context).primaryColor.withOpacity(.7),
+                      color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.7) ?? Colors.transparent,
+
                     )
 
                     ,
                     InkWell(child: usersModel.favorite ==1?
-                    Icon(CupertinoIcons.delete, color: Theme.of(context).primaryColor.withOpacity(.7),)
+                    const Icon(CupertinoIcons.delete)
                         :const Icon(CupertinoIcons.delete),
                         onTap :(){
                           if (usersModel.favorite==1){

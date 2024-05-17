@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/theme/appcolors.dart';
 import '../../../chats/model/entity_model/users_model.dart';
 import '../../contoller/favourite_cubit.dart';
 
@@ -20,12 +21,16 @@ class FavoriteItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(1.5),
-      child: DecoratedBox(decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withOpacity(.1),
-      border: Border.all(color: Theme.of(context).primaryColor.withOpacity(.2),width: 2),
-        borderRadius: BorderRadius.circular(10),
-      ),
-          child: Padding(
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.1) ?? Colors.transparent,
+          border: Border.all(
+            color: Theme.of(context).buttonTheme.colorScheme?.background.withOpacity(0.2) ?? Colors.transparent,
+            width: 2,
+          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+      child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
@@ -61,10 +66,8 @@ class FavoriteItemWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(usersModel.username ?? 'Name',
-                          style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
+                          style: Theme.of(context).textTheme.bodyLarge
+
                         ),
 
                       ],
@@ -79,15 +82,12 @@ class FavoriteItemWidget extends StatelessWidget {
 
                   ],
                 ),
-                 Divider(
-                  thickness: 1,
-                  color: Theme.of(context).primaryColor.withOpacity(.7),
-                ),
+                 const Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                   InkWell(child: usersModel.favorite ==1?
-                  Icon(CupertinoIcons.heart_fill, color: Theme.of(context).primaryColor)
+                  const Icon(CupertinoIcons.heart_fill)
                       :const Icon(CupertinoIcons.heart),
                       onTap :(){
                         if (usersModel.favorite==1){
@@ -100,7 +100,7 @@ class FavoriteItemWidget extends StatelessWidget {
                     Container(
                       height: 20,
                       width: .5,
-                      color: Theme.of(context).primaryColor.withOpacity(.7),
+                      color: AppColors.mainColor.withOpacity(.7),
                     )
 
                     ,
