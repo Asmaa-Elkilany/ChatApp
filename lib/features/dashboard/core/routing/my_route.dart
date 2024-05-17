@@ -1,8 +1,8 @@
 
-import 'package:dashboard/modules/new_chat/view/page/new_chat_page.dart';
-import 'package:dashboard/pages/chat_page/view/page/chat_page.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../pages/chat_page/view/page/chat_poage.dart';
+import '../../modules/new_chat/view/page/new_chat_page.dart';
 import '../../view/page/dashboard_page.dart';
 
 class MyRoute {

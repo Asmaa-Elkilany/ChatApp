@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dashboard/core/extentions/build_context_extension.dart';
+import 'package:auth/features/dashboard/core/extentions/build_context_extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

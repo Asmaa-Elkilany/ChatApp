@@ -1,9 +1,10 @@
 
-import 'package:dashboard/core/extentions/build_context_extension.dart';
-import 'package:dashboard/modules/chats/contoller/chats_cubit.dart';
-import 'package:dashboard/modules/chats/model/entity_model/users_model.dart';
+import 'package:auth/features/dashboard/core/extentions/build_context_extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../contoller/chats_cubit.dart';
+import '../../model/entity_model/users_model.dart';
 
 class UserItemWidget extends StatelessWidget {
   const UserItemWidget({super.key,

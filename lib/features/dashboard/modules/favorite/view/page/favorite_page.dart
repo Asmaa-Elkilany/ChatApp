@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../contoller/favourite_cubit.dart';
 import '../components/favorite_item_widget.dart';
-import 'package:dashboard/modules/chats/contoller/chats_cubit.dart';
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
 

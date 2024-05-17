@@ -1,9 +1,9 @@
-import 'package:dashboard/core/cubit/parent_cubit.dart';
-import 'package:dashboard/core/extentions/build_context_extension.dart';
+
+import 'package:auth/features/dashboard/core/extentions/build_context_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:dashboard/pages/chat_page/view/components/appbar_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/cubit/parent_cubit.dart';
 import '../components/chat_widgets.dart';
 
 class ChatPage extends StatelessWidget {

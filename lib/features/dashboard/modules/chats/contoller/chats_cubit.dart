@@ -2,10 +2,10 @@
 import 'dart:typed_data';
 
 import 'package:bloc/bloc.dart';
-import 'package:dashboard/modules/chats/model/repo/database_repo.dart';
 import 'package:meta/meta.dart';
 
 import '../model/entity_model/users_model.dart';
+import '../model/repo/database_repo.dart';
 
 part 'chats_state.dart';
 

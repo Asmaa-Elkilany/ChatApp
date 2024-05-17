@@ -1,14 +1,13 @@
 
 import 'dart:typed_data';
 
-import 'package:dashboard/core/extentions/build_context_extension.dart';
-import 'package:dashboard/modules/chats/contoller/chats_cubit.dart';
-import 'package:dashboard/modules/chats/model/entity_model/users_model.dart';
-import 'package:dashboard/modules/favorite/contoller/favourite_cubit.dart';
+import 'package:auth/features/dashboard/core/extentions/build_context_extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/appcolors.dart';
+import '../../../chats/model/entity_model/users_model.dart';
+import '../../contoller/favourite_cubit.dart';
 
 class FavoriteItemWidget extends StatelessWidget {
   const FavoriteItemWidget({super.key,

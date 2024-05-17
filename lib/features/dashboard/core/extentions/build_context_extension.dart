@@ -1,9 +1,10 @@
 
 
 
-import 'package:dashboard/core/cubit/parent_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../cubit/parent_cubit.dart';
 
 extension MyTheme on BuildContext{
   ThemeData get getTheme => Theme.of(this);
