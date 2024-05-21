@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../../core/routing/my_route.dart';
 import 'core/cubit/parent_cubit.dart';
@@ -9,13 +8,13 @@ void main() {
 
   MaterialApp materialApp = MaterialApp(
     debugShowCheckedModeBanner: false,
-    onGenerateInitialRoutes: (_)=> MyRoute.initialRoutes,
+    onGenerateInitialRoutes: (_) => MyRoute.initialRoutes,
     onGenerateRoute: MyRoute.onNavigateByName,
     // theme: MyTheme.instance.light,
     // darkTheme: MyTheme.instance.light ,
     themeMode: ParentCubit.instance.themeMode,
   );
-  runApp( materialApp);
+  runApp(materialApp);
 }
 
-
+// main  // light dark

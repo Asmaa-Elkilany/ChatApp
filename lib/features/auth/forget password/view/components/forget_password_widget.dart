@@ -27,7 +27,7 @@ class ForgetPasswordWidget extends StatelessWidget{
                     const SizedBox(
                       height: 20,
                     ),
-                    Image.asset("images/assets/images/Forgot password-cuate.png",
+                    Image.asset("assets/images/Forgot password-cuate.png",
                       width: context.width,
                       height:context.height/2.2
                     ),

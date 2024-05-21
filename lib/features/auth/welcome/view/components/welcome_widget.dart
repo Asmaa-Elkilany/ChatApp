@@ -26,7 +26,7 @@ class WelcomeWidget extends StatelessWidget {
                     const SizedBox(
                       height:20,
                     ),
-                    Image.asset("images/assets/images/welcome.png",
+                    Image.asset("assets/images/welcome.png",
                       width: context.width,
                       height:context.height/2,
                     ),
@@ -101,7 +101,7 @@ class WelcomeWidget extends StatelessWidget {
                 top: 0,
                 left: 0,
                 child: Image.asset(
-                  "images/assets/images/main_top.png",
+                  "assets/images/main_top.png",
                   height: 150,
                 ),
               ),

@@ -2,7 +2,7 @@
 import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/change%20password/view/page/change_password_page.dart';
 import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/forget%20password/view/page/forget_password_page.dart';
 import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/onboarding/view/components/onboarding_widget.dart';
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/registeration/view/page/registeration_page.dart';
+import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/registration/view/page/registeration_page.dart';
 import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/verification/view/page/verification_page.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +22,7 @@ class MyRoute {
     switch (settings.name) {
       case 'onboarding':
         return MaterialPageRoute(builder: (_) => const OnboardingView());
+
       case 'dashboard':
         return MaterialPageRoute(builder: (_) => const DashboardPage());
       case 'new_chat':

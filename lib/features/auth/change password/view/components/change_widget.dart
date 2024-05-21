@@ -36,7 +36,7 @@ class ChangePasswordWidget extends StatelessWidget {
                         fontFamily: "myFont",
                       ),
                     ),
-                    Image.asset("images/assets/images/Reset password-rafiki.png",
+                    Image.asset("assets/images/Reset password-rafiki.png",
                         width: context.width,
                         height:context.height/2.5
                     ),

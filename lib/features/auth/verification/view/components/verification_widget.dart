@@ -29,7 +29,7 @@ class VerificationWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Image.asset("images/assets/images/verification.png",
+              Image.asset("assets/images/verification.png",
                   width: context.width,
                   height:context.height/2.7
               ),
