@@ -67,7 +67,7 @@ class RegisterationWidget extends StatelessWidget {
             const SizedBox(height: 20,),
             ElevatedButton(
               onPressed: () {
-                // Perform signup logic
+                Navigator.pushNamed(context, 'login');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xff6F35A5),
@@ -120,7 +120,7 @@ class RegisterationWidget extends StatelessWidget {
     return Container(
       width: 430,
       decoration: BoxDecoration(
-        color: const Color(0xffE2D3F5),
+        //color: const Color(0xffE2D3F5),
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextFormField(
@@ -168,7 +168,7 @@ class RegisterationWidget extends StatelessWidget {
     return Container(
       width: 430,
       decoration: BoxDecoration(
-        color: const Color(0xffE2D3F5),
+        //color: const Color(0xffE2D3F5),
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextFormField(

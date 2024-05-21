@@ -32,7 +32,7 @@ class LoginWidget extends StatelessWidget{
                     Container(
                       width: context.width,
                       decoration: BoxDecoration(
-                        color: const Color(0xffE2D3F5), // Set the background color here
+                        //color: const Color(0xffE2D3F5), // Set the background color here
                         borderRadius: BorderRadius.circular(30), // Optional: You can adjust the border radius
                       ),
                       child: TextFormField(
@@ -52,7 +52,7 @@ class LoginWidget extends StatelessWidget{
                     Container(
                       width: 430,
                       decoration: BoxDecoration(
-                        color: const Color(0xffE2D3F5),
+                        //color: const Color(0xffE2D3F5),
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(

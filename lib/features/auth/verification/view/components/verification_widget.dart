@@ -66,7 +66,7 @@ class VerificationWidget extends StatelessWidget {
                   fieldHeight: 80,
                   fieldWidth: 50,
                   activeFillColor: const Color(0xffE2D3F5),
-                  inactiveFillColor: Color(0xff7E57C2),
+                  inactiveFillColor: Color(0xffE2D3F5),
                   activeColor: Colors.white,
                   fieldOuterPadding: const EdgeInsets.only(left: 20),
                 ),
@@ -95,7 +95,7 @@ class VerificationWidget extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, 'dashboard');
+                  Navigator.pushNamed(context, 'login');
                 },
                 style: ButtonStyle(
                   backgroundColor:MaterialStateProperty.all(const Color(0xff6F35A5),) ,

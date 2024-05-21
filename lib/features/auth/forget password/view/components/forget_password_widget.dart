@@ -37,7 +37,7 @@ class ForgetPasswordWidget extends StatelessWidget{
                     Container(
                       width: (10*context.width)/12,
                       decoration: BoxDecoration(
-                        color: const Color(0xffE2D3F5),
+                        //color: const Color(0xffE2D3F5),
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
