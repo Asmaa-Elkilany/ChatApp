@@ -1,6 +1,7 @@
-import 'package:auth/features/auth/change%20password/view/page/change_password_page.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+
+import '../../change password/view/page/change_password_page.dart';
 
 part "forget_password_state.dart";
 

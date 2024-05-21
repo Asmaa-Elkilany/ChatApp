@@ -1,5 +1,6 @@
-import 'package:auth/features/auth/registeration/view/components/registeration_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../components/registeration_widget.dart';
 
 class RegisterationPage extends StatelessWidget {
   const RegisterationPage({super.key});

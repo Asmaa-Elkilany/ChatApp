@@ -1,4 +1,4 @@
-import 'package:auth/core/utils/context_extension.dart';
+import 'package:chaaaaaaaaaaaaaaaaaaaaat/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeWidget extends StatelessWidget {
@@ -36,7 +36,7 @@ class WelcomeWidget extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, "/login");
+                        Navigator.pushNamed(context, 'login');
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
@@ -66,7 +66,7 @@ class WelcomeWidget extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, "/signup");
+                        Navigator.pushNamed(context, 'signup');
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(

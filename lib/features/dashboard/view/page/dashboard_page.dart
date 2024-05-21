@@ -1,11 +1,12 @@
-import 'package:dashboard/cubit/dashboard_cubit.dart';
-import 'package:dashboard/modules/chats/view/page/chats_page.dart';
-import 'package:dashboard/modules/favorite/view/page/favorite_page.dart';
-import 'package:dashboard/modules/settings/view/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+
+import '../../cubit/dashboard_cubit.dart';
+import '../../modules/chats/view/page/chats_page.dart';
+import '../../modules/favorite/view/page/favorite_page.dart';
+import '../../modules/settings/view/settings.dart';
 
 
 class DashboardPage extends StatelessWidget {

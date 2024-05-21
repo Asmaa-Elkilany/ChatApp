@@ -92,7 +92,7 @@ class RegisterationWidget extends StatelessWidget {
                 const Text('Already have an account? '),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "/login");
+                    Navigator.pushNamed(context, 'login');
                   },
                   child: const Text(
                     'Login',

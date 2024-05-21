@@ -1,4 +1,4 @@
-import 'package:auth/core/utils/context_extension.dart';
+import 'package:chaaaaaaaaaaaaaaaaaaaaat/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/validation.dart';
@@ -82,7 +82,7 @@ class ForgetPasswordWidget extends StatelessWidget{
                     ),
                     ElevatedButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, "/change");
+                        Navigator.pushNamed(context, 'change');
                       },
                       style: ButtonStyle(
                         backgroundColor:MaterialStateProperty.all(const Color(0xff6F35A5),) ,

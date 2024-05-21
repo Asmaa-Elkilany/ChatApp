@@ -1,8 +1,9 @@
-import 'package:auth/core/utils/context_extension.dart';
-import 'package:auth/features/auth/verification/controller/verification_controller_cubit.dart';
+import 'package:chaaaaaaaaaaaaaaaaaaaaat/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import '../../controller/verification_controller_cubit.dart';
 
 class VerificationWidget extends StatelessWidget {
   const VerificationWidget({super.key});
@@ -94,7 +95,7 @@ class VerificationWidget extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, "/dashboard");
+                  Navigator.pushNamed(context, 'dashboard');
                 },
                 style: ButtonStyle(
                   backgroundColor:MaterialStateProperty.all(const Color(0xff6F35A5),) ,

@@ -1,7 +1,7 @@
-import 'package:auth/features/auth/welcome/view/page/welcome_page.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../welcome/view/page/welcome_page.dart';
 import '../view/components/onbarding_info.dart';
 import '../view/components/onboarding_items.dart';
 part 'onboarding_controller_state.dart';

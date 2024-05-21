@@ -1,7 +1,8 @@
-import 'package:auth/core/utils/context_extension.dart';
-import 'package:auth/core/utils/validation.dart';
+import 'package:chaaaaaaaaaaaaaaaaaaaaat/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../../core/utils/validation.dart';
 
 class LoginWidget extends StatelessWidget{
   LoginWidget({super.key});
@@ -82,7 +83,7 @@ class LoginWidget extends StatelessWidget{
 
                     ElevatedButton(
                       onPressed: (){
-                        Navigator.pushNamed(context, "/dashboard");
+                        Navigator.pushNamed(context, 'dashboard');
                       },
                       style: ButtonStyle(
                         backgroundColor:MaterialStateProperty.all(const Color(0xff6F35A5),) ,
@@ -111,7 +112,7 @@ class LoginWidget extends StatelessWidget{
                       children: [
                         InkWell(
                           onTap: (){
-                            Navigator.pushNamed(context, "/forget");
+                            Navigator.pushNamed(context, 'forget');
                           },
                           child: const Text('Forget password?',
                             style: TextStyle(
@@ -124,7 +125,7 @@ class LoginWidget extends StatelessWidget{
                         const Text("     OR     ",),
                         InkWell(
                           onTap: (){
-                            Navigator.pushNamed(context, "/signup");
+                            Navigator.pushNamed(context, 'signup');
                           },
                           child: const Text('Create Account!',
                             style: TextStyle(
