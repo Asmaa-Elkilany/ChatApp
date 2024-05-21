@@ -1,4 +1,4 @@
-name: chaaaaaaaaaaaaaaaaaaaaat
+name: project_flutter
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -92,15 +92,16 @@ flutter:
     - assets/images/Reset password-rafiki.png
     - assets/images/verification.png
     - assets/images/logo.jpg
+    - assets/images/logo.png
 
 flutter_native_splash:
   color: "#42a5f5"
-  image: "assets/icons/logo.jpg"
+  image: "assets/images/logo.png"
 flutter_launcher_icons:
   ios: true
   android: true
-  image_path_android: "assets/images/logo.jpg"
-  image_path_ios: "assets/images/logo.jpg"
+  image_path_android: "assets/images/logo.png"
+  image_path_ios: "assets/images/logo.png"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

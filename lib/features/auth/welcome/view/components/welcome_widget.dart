@@ -1,114 +1,60 @@
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/core/utils/context_extension.dart';
+import 'package:project_flutter/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/widgets/my_button.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({super.key});
   @override
   Widget build(BuildContext context) {
-        return SizedBox(
-          child: Stack(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 30,
-                    ),
-
-                    const Text(
-                      'Welcome',
-                      style: TextStyle(
-                        fontSize: 35,
-                        fontFamily: "myFont",
-                      ),
-                    ),
-                    const SizedBox(
-                      height:20,
-                    ),
-                    Image.asset("assets/images/welcome.png",
-                      width: context.width,
-                      height:context.height/2,
-                    ),
-
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'login');
-                      },
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          const Color(0xff6F35A5),
-                        ),
-                          padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(
-                              horizontal: 80, vertical: 10),
-                        ),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(27),
-                          ),
-                        ),
-                      ),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontFamily: "myFont",
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'signup');
-                      },
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          const Color(0xffE2D3F5),
-                        ),
-                        padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(
-                              horizontal: 80, vertical: 10),
-                        ),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                      ),
-                      child: const Text(
-                        "Signup",
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontFamily: "myFont",
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    )
-                  ],
-                ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Center(
+            child: Text(
+              "ChitChat",
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.w900,
+                color: Color(0xff2e386b),
               ),
-              Positioned(
-                top: 0,
-                left: 0,
-                child: Image.asset(
-                  "assets/images/main_top.png",
-                  height: 150,
-                ),
-              ),
-
-            ],
+            ),
           ),
-        );
-
+          const SizedBox(
+            height: 20,
+          ),
+          Image.asset(
+            "assets/images/logo.png",
+            width: context.width / 1.5,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          MyButton(
+            color: Colors.yellow[900]!,
+            title: "Login",
+            onPressed: () {
+              Navigator.pushNamed(context, 'login');
+            },
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          MyButton(
+            color: Colors.blue[800]!,
+            title: "Signup",
+            onPressed: () {
+              Navigator.pushNamed(context, 'signup');
+            },
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
+      ),
+    );
   }
 }

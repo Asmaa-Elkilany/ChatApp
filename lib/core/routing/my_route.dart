@@ -1,9 +1,9 @@
 
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/change%20password/view/page/change_password_page.dart';
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/forget%20password/view/page/forget_password_page.dart';
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/onboarding/view/components/onboarding_widget.dart';
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/registration/view/page/registeration_page.dart';
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/features/auth/verification/view/page/verification_page.dart';
+import 'package:project_flutter/features/auth/change%20password/view/page/change_password_page.dart';
+import 'package:project_flutter/features/auth/forget%20password/view/page/forget_password_page.dart';
+import 'package:project_flutter/features/auth/onboarding/view/components/onboarding_widget.dart';
+import 'package:project_flutter/features/auth/registration/view/page/registeration_page.dart';
+import 'package:project_flutter/features/auth/verification/view/page/verification_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/auth/login/view/page/login_page.dart';

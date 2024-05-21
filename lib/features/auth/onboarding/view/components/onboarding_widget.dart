@@ -97,7 +97,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             if(!mounted)return;
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const WelcomePage()));
           },
-          child: const Text("Get started",style: TextStyle(color: Colors.white),)),
+          child: const Text("Get started",style: TextStyle(color: Colors.white),),),
     );
   }
 }

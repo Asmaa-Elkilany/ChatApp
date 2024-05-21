@@ -1,4 +1,4 @@
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/core/resources/assets_values_managers.dart';
+import 'package:project_flutter/core/resources/assets_values_managers.dart';
 
 import 'onbarding_info.dart';
 

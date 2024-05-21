@@ -36,32 +36,53 @@ class CustomTextFormField extends StatelessWidget {
       obscuringCharacter: '*',
       decoration: InputDecoration(
         label: label,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 10),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,
-        border: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.grey,
-            width: 2,
-          ),
-          borderRadius: BorderRadius.circular(30),
+        contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10),),
         ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.blue,
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.orange,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(10),),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.blue,
             width: 2,
           ),
-          borderRadius: BorderRadius.circular(30),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 2,
+            borderSide: const BorderSide(color: Colors.red,
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(30),
           ),
-          borderRadius: BorderRadius.circular(30),
-        ),
       ),
+        // border: OutlineInputBorder(
+        //   borderSide: const BorderSide(
+        //     color: Colors.grey,
+        //     width: 2,
+        //   ),
+        //   borderRadius: BorderRadius.circular(30),
+        // ),
+        // focusedBorder: OutlineInputBorder(
+        //   borderSide: const BorderSide(
+        //     color: Colors.blue,
+        //     width: 2,
+        //   ),
+        //   borderRadius: BorderRadius.circular(30),
+        // ),
+        // errorBorder: OutlineInputBorder(
+        //   borderSide: const BorderSide(
+        //     color: Colors.red,
+        //     width: 2,
+        //   ),
+        //   borderRadius: BorderRadius.circular(30),
+        // ),
+      //),
     );
   }
 }

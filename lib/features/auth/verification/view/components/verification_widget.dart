@@ -1,8 +1,9 @@
-import 'package:chaaaaaaaaaaaaaaaaaaaaat/core/utils/context_extension.dart';
+import 'package:project_flutter/core/utils/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../../../core/widgets/my_button.dart';
 import '../../controller/verification_controller_cubit.dart';
 
 class VerificationWidget extends StatelessWidget {
@@ -22,17 +23,17 @@ class VerificationWidget extends StatelessWidget {
                 height: 35,
               ),
               const Text(
-                'Verification',
+                "Verification",
                 style: TextStyle(
-                  fontSize: 35,
-                  fontFamily: "myFont",
-                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                  fontWeight: FontWeight.w900,
+                  color: Color(0xff2e386b),
                 ),
               ),
-              Image.asset("assets/images/verification.png",
-                  width: context.width,
-                  height:context.height/2.7
-              ),
+              // Image.asset("assets/images/verification.png",
+              //     width: context.width,
+              //     height:context.height/2.7
+              // ),
               const SizedBox(
                 height: 20,
               ),
@@ -53,10 +54,10 @@ class VerificationWidget extends StatelessWidget {
                 appContext: context,
                 animationType: AnimationType.fade,
                 mainAxisAlignment: MainAxisAlignment.center,
-                validator: (v){
-                  if(v!.length <3){
+                validator: (v) {
+                  if (v!.length < 3) {
                     return "I am from validator";
-                  } else{
+                  } else {
                     return null;
                   }
                 },
@@ -65,17 +66,15 @@ class VerificationWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   fieldHeight: 80,
                   fieldWidth: 50,
-                  activeFillColor: const Color(0xffE2D3F5),
-                  inactiveFillColor: Color(0xffE2D3F5),
+                  activeFillColor: Colors.blue[100],
+                  inactiveFillColor: Colors.blue[100],
                   activeColor: Colors.white,
                   fieldOuterPadding: const EdgeInsets.only(left: 20),
                 ),
                 animationDuration: const Duration(milliseconds: 300),
-                //backgroundColor: Colors.purple,
                 enableActiveFill: true,
-                //errorAnimationController: errorController,
                 controller: controller.pinCodeController,
-                keyboardType:TextInputType.number,
+                keyboardType: TextInputType.number,
                 onCompleted: (v) {
                   print("Completed");
                 }, /*
@@ -93,31 +92,12 @@ class VerificationWidget extends StatelessWidget {
               },*/
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: (){
+              MyButton(
+                color: Colors.blue[800]!,
+                title: "Confirm",
+                onPressed: () {
                   Navigator.pushNamed(context, 'login');
                 },
-                style: ButtonStyle(
-                  backgroundColor:MaterialStateProperty.all(const Color(0xff6F35A5),) ,
-                  padding: MaterialStateProperty.all(
-                    const EdgeInsets.symmetric(horizontal: 79,vertical: 10),
-                  ),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(27),
-                  ),
-                  ),
-                ),
-                child: const Text(
-                  "Confirm",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontFamily: "myFont",
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
               ),
               const SizedBox(
                 height: 20,
