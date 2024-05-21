@@ -10,7 +10,7 @@ class AppBarWidget extends StatelessWidget {
       title: Row(
         children: [
           Image.asset(
-            "images/logo.png",
+            "assets/images/logo.jpg",
             height: 25,
           ),
           const SizedBox(width: 10),

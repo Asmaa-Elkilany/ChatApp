@@ -91,6 +91,7 @@ flutter:
     - assets/images/Forgot password-cuate.png
     - assets/images/Reset password-rafiki.png
     - assets/images/verification.png
+    - assets/images/logo.jpg
 
 flutter_native_splash:
   color: "#42a5f5"
