@@ -13,7 +13,7 @@ A cross-platform real-time chat application built with **Flutter** and **Firebas
   - Log out
 - **Contacts** – add contacts with a name and a profile picture from the gallery or camera, and mark favorites.
 - **Local storage** – contacts and favorites are stored locally with SQLite; onboarding state and preferences are saved with SharedPreferences.
-- **Light / dark theme** switch.
+- **Light / dark theme** and **English / Arabic** language switch.
 - Animated **onboarding**, native splash screen and custom app icons.
 
 ## Tech Stack
@@ -67,5 +67,10 @@ lib/
 
 ## Screenshots
 
-<!-- Add screenshots here, e.g. -->
-<!-- <img src="screenshots/login.png" width="220"> <img src="screenshots/chat.png" width="220"> -->
+| Chats | Pinned conversations | Conversation | Add contact |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/chats.png" width="200"> | <img src="screenshots/pinned.png" width="200"> | <img src="screenshots/conversation.png" width="200"> | <img src="screenshots/add-contact.png" width="200"> |
+
+| Settings | Dark mode | Arabic – chats | Arabic – pinned |
+| :---: | :---: | :---: | :---: |
+| <img src="screenshots/settings.png" width="200"> | <img src="screenshots/settings-dark.png" width="200"> | <img src="screenshots/chats-dark-arabic.png" width="200"> | <img src="screenshots/pinned-dark-arabic.png" width="200"> |
