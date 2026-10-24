@@ -139,12 +139,14 @@ class _RegisterationWidgetState extends State<RegisterationWidget> {
                   showSpinner = true;
                 });
                 try {
-                  final newUser = await _auth
+                  final credential = await _auth
                       .createUserWithEmailAndPassword(
-                      email: email, password: password)
-                      .then((value) {
-                    Navigator.pushNamed(context, 'login');
-                  });
+                      email: email, password: password);
+                  // Send the verification link, then wait on the
+                  // verification screen until the user confirms it.
+                  await credential.user?.sendEmailVerification();
+                  if (!mounted) return;
+                  Navigator.pushReplacementNamed(context, 'verification');
                 } on FirebaseAuthException catch (e) {
                   String message;
                   if (e.code == 'weak-password') {
