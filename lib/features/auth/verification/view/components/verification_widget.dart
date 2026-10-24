@@ -1,110 +1,127 @@
-import 'package:project_flutter/core/utils/context_extension.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../../core/widgets/my_button.dart';
-import '../../controller/verification_controller_cubit.dart';
 
-class VerificationWidget extends StatelessWidget {
+/// Email verification screen shown after sign-up (and after login while the
+/// email is still unverified). Firebase sends a verification link by email;
+/// the user taps it, then confirms here.
+class VerificationWidget extends StatefulWidget {
   const VerificationWidget({super.key});
+
+  @override
+  State<VerificationWidget> createState() => _VerificationWidgetState();
+}
+
+class _VerificationWidgetState extends State<VerificationWidget> {
+  bool _checking = false;
+  bool _resending = false;
+
+  User? get _user => FirebaseAuth.instance.currentUser;
+
+  void _showMessage(String message, Color color) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(message),
+      backgroundColor: color,
+    ));
+  }
+
+  Future<void> _checkVerified() async {
+    final user = _user;
+    if (user == null) {
+      Navigator.pushReplacementNamed(context, 'login');
+      return;
+    }
+    setState(() => _checking = true);
+    try {
+      await user.reload();
+      final verified = FirebaseAuth.instance.currentUser?.emailVerified ?? false;
+      if (!mounted) return;
+      if (verified) {
+        Navigator.pushNamedAndRemoveUntil(context, 'dashboard', (_) => false);
+      } else {
+        _showMessage(
+            'Email not verified yet. Please open the link we sent you.',
+            Colors.orange);
+      }
+    } catch (_) {
+      if (mounted) _showMessage('Could not check status. Try again.', Colors.red);
+    } finally {
+      if (mounted) setState(() => _checking = false);
+    }
+  }
+
+  Future<void> _resend() async {
+    final user = _user;
+    if (user == null) return;
+    setState(() => _resending = true);
+    try {
+      await user.sendEmailVerification();
+      if (mounted) _showMessage('Verification email sent again.', Colors.green);
+    } on FirebaseAuthException catch (e) {
+      final message = e.code == 'too-many-requests'
+          ? 'Too many requests. Please wait a moment and try again.'
+          : 'Could not send the email. Please try again.';
+      if (mounted) _showMessage(message, Colors.red);
+    } finally {
+      if (mounted) setState(() => _resending = false);
+    }
+  }
+
+  Future<void> _backToLogin() async {
+    await FirebaseAuth.instance.signOut();
+    if (!mounted) return;
+    Navigator.pushNamedAndRemoveUntil(context, 'login', (_) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => VerificationControllerCubit(),
-      child:
-      BlocBuilder<VerificationControllerCubit, VerificationControllerState>(
-        builder: (context, state) {
-          final VerificationControllerCubit controller =
-          context.read<VerificationControllerCubit>();
-          return Column(
-            children: [
-              const SizedBox(
-                height: 35,
-              ),
-              const Text(
-                "Verification",
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.w900,
-                  color: Color(0xff2e386b),
+    final email = _user?.email ?? 'your email';
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        children: [
+          const SizedBox(height: 35),
+          const Text(
+            "Verification",
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.w900,
+              color: Color(0xff2e386b),
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Icon(Icons.mark_email_unread_outlined,
+              size: 90, color: Color(0xff2e386b)),
+          const SizedBox(height: 20),
+          Text(
+            'We sent a verification link to\n$email\n\n'
+            'Open the link, then tap "I\'ve verified my email".',
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 20),
+          _checking
+              ? const CircularProgressIndicator()
+              : MyButton(
+                  color: Colors.blue[800]!,
+                  title: "I've verified my email",
+                  onPressed: _checkVerified,
                 ),
-              ),
-              // Image.asset("assets/images/verification.png",
-              //     width: context.width,
-              //     height:context.height/2.7
-              // ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Enter the OTP send to your phone number',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+          _resending
+              ? const Padding(
+                  padding: EdgeInsets.all(10),
+                  child: CircularProgressIndicator(),
+                )
+              : TextButton(
+                  onPressed: _resend,
+                  child: const Text('Resend email'),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              PinCodeTextField(
-                length: 4,
-                obscureText: false,
-                appContext: context,
-                animationType: AnimationType.fade,
-                mainAxisAlignment: MainAxisAlignment.center,
-                validator: (v) {
-                  if (v!.length < 3) {
-                    return "I am from validator";
-                  } else {
-                    return null;
-                  }
-                },
-                pinTheme: PinTheme(
-                  shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(20),
-                  fieldHeight: 80,
-                  fieldWidth: 50,
-                  activeFillColor: Colors.blue[100],
-                  inactiveFillColor: Colors.blue[100],
-                  activeColor: Colors.white,
-                  fieldOuterPadding: const EdgeInsets.only(left: 20),
-                ),
-                animationDuration: const Duration(milliseconds: 300),
-                enableActiveFill: true,
-                controller: controller.pinCodeController,
-                keyboardType: TextInputType.number,
-                onCompleted: (v) {
-                  print("Completed");
-                }, /*
-              onChanged: (value) {
-                print(value);
-                setState(() {
-                  currentText = value;
-                });
-              },
-              beforeTextPaste: (text) {
-                print("Allowing to paste $text");
-                //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                //but you can show anything you want here, like your pop up saying wrong paste format or etc
-                return true;
-              },*/
-              ),
-              const SizedBox(height: 20),
-              MyButton(
-                color: Colors.blue[800]!,
-                title: "Confirm",
-                onPressed: () {
-                  Navigator.pushNamed(context, 'login');
-                },
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-            ],
-          );
-        },
+          TextButton(
+            onPressed: _backToLogin,
+            child: const Text('Back to login'),
+          ),
+        ],
       ),
     );
   }

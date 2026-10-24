@@ -21,9 +21,25 @@ class _SettingsPageState extends State<SettingsPage> {
             body: Center(  // Centering the Row within the Scaffold
               child: Padding(  // Adding padding around the Row
                 padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,  // Centering the buttons within the Row
+                child: Wrap(
+                  alignment: WrapAlignment.center,  // Centering the buttons, wrapping on narrow screens
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'change');
+                        },
+                        child: const Text(
+                          "Change Password",
+                          style: TextStyle(
+                            color: Colors.white,
+                            height: 5,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ElevatedButton(

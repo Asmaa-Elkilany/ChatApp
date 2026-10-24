@@ -100,17 +100,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                   showSpinner = true;
                 });
                 try {
-                  await _auth
-                      .signInWithEmailAndPassword(
-                      email: email, password: password)
-                      .then((value) =>
-                      Navigator.pushNamed(context, 'dashboard'));
+                  final credential = await _auth.signInWithEmailAndPassword(
+                      email: email, password: password);
+                  if (!mounted) return;
+                  // Users who haven't verified their email yet are sent to
+                  // the verification screen instead of the dashboard.
+                  final verified = credential.user?.emailVerified ?? false;
+                  Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      verified ? 'dashboard' : 'verification',
+                      (_) => false);
                 } on FirebaseAuthException catch (e) {
                   String message;
 
                   if (e.code == 'user-not-found') {
                     message = 'No user found for that email.';
-                  } else if (e.code == 'wrong-password') {
+                  } else if (e.code == 'wrong-password' ||
+                      e.code == 'invalid-credential') {
                     message = 'Wrong password provided.';
                   } else {
                     message = 'An error occurred. Please try again.';
